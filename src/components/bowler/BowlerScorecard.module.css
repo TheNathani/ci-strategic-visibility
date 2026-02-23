@@ -1,0 +1,224 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary);
+}
+
+.header {
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--text-primary);
+}
+
+.subtitle {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+.tableWrapper {
+  flex: 1;
+  overflow: auto;
+  padding: 16px 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10px;
+}
+
+.table th {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  padding: 8px 6px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-bright);
+  white-space: nowrap;
+}
+
+.thKpi {
+  text-align: left !important;
+  min-width: 160px;
+}
+
+.thOwner {
+  text-align: left !important;
+  min-width: 120px;
+}
+
+.thTarget {
+  min-width: 50px;
+}
+
+.thMonth {
+  min-width: 70px;
+}
+
+.thTrend {
+  min-width: 90px;
+}
+
+.row {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.row:hover {
+  background: var(--glow-subtle);
+}
+
+.tdKpi {
+  padding: 10px 6px;
+  text-align: left;
+}
+
+.kpiName {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.kpiUnit {
+  font-size: 8px;
+  color: var(--text-dim);
+}
+
+.tdOwner {
+  padding: 10px 6px;
+  font-size: 9px;
+  color: var(--text-dim);
+  text-align: left;
+}
+
+.tdTarget {
+  padding: 10px 6px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.tdMonth {
+  padding: 8px 4px;
+  text-align: center;
+  position: relative;
+}
+
+.tdMonth.green {
+  background: rgba(0, 255, 65, 0.06);
+  border-left: 1px solid rgba(0, 255, 65, 0.1);
+  border-right: 1px solid rgba(0, 255, 65, 0.1);
+}
+
+.tdMonth.yellow {
+  background: rgba(255, 187, 0, 0.06);
+  border-left: 1px solid rgba(255, 187, 0, 0.1);
+  border-right: 1px solid rgba(255, 187, 0, 0.1);
+}
+
+.tdMonth.red {
+  background: rgba(255, 0, 64, 0.06);
+  border-left: 1px solid rgba(255, 0, 64, 0.1);
+  border-right: 1px solid rgba(255, 0, 64, 0.1);
+}
+
+.tdMonth.pending {
+  opacity: 0.4;
+}
+
+.cellContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  position: relative;
+}
+
+.actualValue {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.targetValue {
+  font-size: 8px;
+  color: var(--text-dim);
+}
+
+.pending {
+  color: var(--text-dim);
+  font-size: 11px;
+}
+
+.cmIndicator {
+  position: absolute;
+  top: -4px;
+  right: -2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--status-red);
+  color: var(--bg-primary);
+  font-size: 8px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: help;
+}
+
+.tdTrend {
+  padding: 8px 4px;
+  text-align: center;
+}
+
+.legend {
+  padding: 8px 20px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9px;
+  color: var(--text-dim);
+}
+
+.legendDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 1px;
+}
+
+.legendDot.green { background: rgba(0, 255, 65, 0.4); }
+.legendDot.yellow { background: rgba(255, 187, 0, 0.4); }
+.legendDot.red { background: rgba(255, 0, 64, 0.4); }
+
+.cmLegend {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--status-red);
+  color: var(--bg-primary);
+  font-size: 8px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

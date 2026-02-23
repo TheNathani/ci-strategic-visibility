@@ -1,0 +1,40 @@
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.backBtn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 1px 8px;
+  font-family: inherit;
+  font-size: 10px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+}
+
+.backBtn:hover {
+  border-color: var(--border-bright);
+  color: var(--text-primary);
+}
+
+.separator {
+  color: var(--text-dim);
+}
+
+.arrow {
+  color: var(--text-dim);
+}
+
+.crumb {
+  color: var(--text-dim);
+}
+
+.active {
+  color: var(--text-primary);
+}

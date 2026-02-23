@@ -1,0 +1,275 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary);
+  overflow: hidden;
+}
+
+.header {
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--text-primary);
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+.navBtn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 3px 12px;
+  font-family: inherit;
+  font-size: 10px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+}
+
+.navBtn:hover {
+  border-color: var(--border-bright);
+  color: var(--text-primary);
+  box-shadow: 0 0 8px var(--glow-subtle);
+}
+
+.subtitle {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+
+.vsmContainer {
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.stepsRow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  min-width: max-content;
+  margin: 0 auto;
+}
+
+.stepWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.connector {
+  width: 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.connectorLine {
+  width: 100%;
+  height: 1px;
+  background: var(--border-color);
+}
+
+.flowDot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-primary);
+  box-shadow: 0 0 6px var(--glow-color);
+  animation: flowAnim 2s linear infinite;
+}
+
+@keyframes flowAnim {
+  0% { left: 0; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { left: calc(100% - 4px); opacity: 0; }
+}
+
+.waitTime {
+  position: absolute;
+  bottom: -16px;
+  font-size: 8px;
+  color: var(--text-dim);
+  white-space: nowrap;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.stepBox {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 10px 12px;
+  min-width: 110px;
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+  cursor: default;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.stepBox:not(:disabled) {
+  cursor: pointer;
+}
+
+.stepBox:not(:disabled):hover {
+  border-color: var(--border-bright);
+  box-shadow: 0 0 12px var(--glow-subtle);
+}
+
+.bottleneck {
+  border-color: var(--status-red) !important;
+  animation: pulseRed 2s ease-in-out infinite;
+}
+
+@keyframes pulseRed {
+  0%, 100% { box-shadow: 0 0 5px rgba(255, 0, 64, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(255, 0, 64, 0.6); }
+}
+
+.stepName {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 1px;
+}
+
+.stepFullName {
+  font-size: 8px;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.stepMetrics {
+  display: flex;
+  gap: 10px;
+}
+
+.stepMetric {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.stepMetricLabel {
+  font-size: 8px;
+  color: var(--text-dim);
+  letter-spacing: 0.5px;
+}
+
+.stepMetricValue {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.stepOwner {
+  font-size: 8px;
+  color: var(--text-dim);
+  margin-top: 6px;
+  letter-spacing: 0.5px;
+}
+
+.bottleneckBadge {
+  position: absolute;
+  top: -8px;
+  right: 8px;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--bg-primary);
+  background: var(--status-red);
+  padding: 1px 6px;
+}
+
+.summaryBar {
+  padding: 12px 20px;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.summaryMetric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.summaryLabel {
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+}
+
+.summaryValue {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.efficiencyBad {
+  color: var(--status-red);
+}
+
+.wasteHigh {
+  color: var(--accent-warn);
+}
+
+.efficiencyBar {
+  flex: 1;
+  min-width: 200px;
+}
+
+.efficiencyTrack {
+  width: 100%;
+  height: 6px;
+  background: var(--status-red);
+  border-radius: 3px;
+  overflow: hidden;
+  opacity: 0.6;
+}
+
+.vaFill {
+  height: 100%;
+  background: var(--status-green);
+  transition: width 0.5s;
+}
+
+.efficiencyLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  letter-spacing: 0.5px;
+  color: var(--text-dim);
+  margin-top: 3px;
+}
